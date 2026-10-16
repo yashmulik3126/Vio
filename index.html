@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration & Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-header">
+            <h1>Student Registration</h1>
+            <p>Enter student details and marks</p>
+        </div>
+
+        <form id="registrationForm">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name"
+                       placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="roll">Roll Number</label>
+                <input type="number" id="roll"
+                       placeholder="Enter roll number"
+                       min="1" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" required>
+                    <option value="">Choose your course</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BSc Computer Science">BSc Computer Science</option>
+                    <option value="BSc IT">BSc IT</option>
+                    <option value="MCA">MCA</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <h3 class="section-title">Subject Marks</h3>
+            <p class="hint">Enter marks out of 100 for each subject.</p>
+
+            <div class="form-group">
+                <label for="htmlMarks">HTML Marks</label>
+                <input type="number" id="htmlMarks"
+                       placeholder="Marks out of 100"
+                       min="0" max="100" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cssMarks">CSS Marks</label>
+                <input type="number" id="cssMarks"
+                       placeholder="Marks out of 100"
+                       min="0" max="100" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jsMarks">JavaScript Marks</label>
+                <input type="number" id="jsMarks"
+                       placeholder="Marks out of 100"
+                       min="0" max="100" step="any" required>
+            </div>
+
+            <button type="submit">Register & Calculate Result</button>
+
+            <p id="message" role="status" aria-live="polite"></p>
+        </form>
+
+        <div id="result" class="result-card" hidden>
+            <h2>Student Result</h2>
+            <p><strong>Name:</strong> <span id="resultName"></span></p>
+            <p><strong>Roll Number:</strong> <span id="resultRoll"></span></p>
+            <p><strong>Total Marks:</strong> <span id="resultTotal"></span> / 300</p>
+            <p><strong>Percentage:</strong> <span id="resultPercentage"></span>%</p>
+            <p><strong>Status:</strong> <span id="resultStatus"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
